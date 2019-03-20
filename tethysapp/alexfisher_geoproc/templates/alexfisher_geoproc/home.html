@@ -1,0 +1,22 @@
+{% extends "alexfisher_geoproc/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+  <h1> The ArcMap Geoprocessing App </h1>
+  <img src="https://media2.giphy.com/media/xT4uQBNEr2CFjaV84M/giphy.gif?cid=3640f6095c92a15e445635595146bdfc">
+
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+
+{% endblock %}
+
+{% block app_actions %}
+{% endblock %}
