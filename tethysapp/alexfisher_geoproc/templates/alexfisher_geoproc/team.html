@@ -99,14 +99,10 @@ require([
           inputGraphicContainer.push(inputGraphic);
           var featureSet = new FeatureSet();
           featureSet.features = inputGraphicContainer;
-          var bfDistance = new LinearUnit();
-          bfDistance.distance = 100;
-          bfDistance.units = "miles";
 
         // input parameters
           var params = {
             "Input_Pour_Point": featureSet,
-            "WS_Area_Raster": bfDistance
           };
           gp.submitJob(params).then(completeCallback, errBack, statusCallback);
     }
