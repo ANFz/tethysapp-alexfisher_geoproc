@@ -80,10 +80,10 @@ require([
           wkid: 102100 //EPSG3857
         };
    //add map click function
-    view.on("click", bufferPoint);
+    view.on("click", watershedcalc);
 
    //main function
-    function bufferPoint(event) {
+    function watershedcalc(event) {
 
           graphicsLayer.removeAll();
           var point = new Point({
@@ -105,15 +105,15 @@ require([
 
         // input parameters
           var params = {
-            "Input_Features": featureSet,
-            "Distance": bfDistance
+            "Input_Pour_Point": featureSet,
+            "WS_Area_Raster": bfDistance
           };
           gp.submitJob(params).then(completeCallback, errBack, statusCallback);
     }
 
    function completeCallback(result){
 
-        gp.getResultData(result.jobId, "Output_Polygons").then(drawResult, drawResultErrBack);
+        gp.getResultData(result.jobId, "Output_Watershed_Boundary").then(drawResult, drawResultErrBack);
 
    }
 
